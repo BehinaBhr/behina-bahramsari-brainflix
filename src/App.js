@@ -1,12 +1,11 @@
 import './App.scss';
 import { useState } from "react";
+import Header from "./components/Header/Header.js";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Hello
-      </header>
+      <Header />
     </div>
   );
 }
