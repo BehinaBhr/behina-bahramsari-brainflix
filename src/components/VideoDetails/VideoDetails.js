@@ -1,12 +1,11 @@
 import "./VideoDetails.scss";
 import viewicone from "../../assets/icons/views.svg";
 import likeicone from "../../assets/icons/likes.svg";
+import FormattedDate from "../FormattedDate/FormattedDate"
 
 function VideoDetails({ videoInfo }) {
   const {
     title,
-    image,
-    video,
     channel,
     timestamp,
     views,
@@ -14,14 +13,6 @@ function VideoDetails({ videoInfo }) {
     description,
     comments,
   } = videoInfo;
-  function formattedDate(timestamp) {
-    let date = new Date(timestamp);
-    console.log(date);
-    let y = date.getFullYear();
-    let m = date.getMonth() + 1;
-    let d = date.getDate();
-    return `${m}/${d}/${y}`;
-  }
 
   return (
     <section className="video-details">
@@ -30,7 +21,7 @@ function VideoDetails({ videoInfo }) {
       <div className="video-details__info">
         <div className="video-details__info-section">
           <div className="video-details__channel">By {channel}</div>
-          <div className="video-details__date">{formattedDate(timestamp)}</div>
+          <div className="video-details__date"><FormattedDate timestamp={timestamp}/></div>
         </div>
 
         <div className="video-details__info-section">
