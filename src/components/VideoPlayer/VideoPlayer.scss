@@ -1,0 +1,21 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+
+
+  .video-player {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    background-color: $black;
+    padding-top: 56.25%;
+    overflow: hidden;
+    
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }

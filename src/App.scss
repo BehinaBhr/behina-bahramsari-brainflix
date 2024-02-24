@@ -1,6 +1,14 @@
-.App {
+@use "./styles/partials/mixins" as *;
+
+.app {
   font-family: "AvenirNextLTPro", Arial, Helvetica, sans-serif;
   background-color: white;
+  
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 * {
