@@ -25,7 +25,7 @@ function VideoDetails({ videoInfo }) {
 
   return (
     <section className="video-details">
-      <h1 className="video-details__title">Tech Trends: {title}</h1>
+      <h1 className="video-details__title"><span>Tech Trends: </span>{title}</h1>
 
       <div className="video-details__info">
         <div className="video-details__info-section">
@@ -34,7 +34,7 @@ function VideoDetails({ videoInfo }) {
         </div>
 
         <div className="video-details__info-section">
-          <div className="video-details__veiws">
+          <div className="video-details__views">
             <img
               className="video-details__like-icon"
               src={viewicone}
