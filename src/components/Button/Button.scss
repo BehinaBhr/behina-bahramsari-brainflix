@@ -1,0 +1,32 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.button {
+    position: relative;
+    width: 100%;
+    box-sizing: content-box;
+  
+    @include tablet {
+      width: 9.375rem;
+      padding-right: $tablet-space-between;
+    }
+  
+    &__icon {
+      position: absolute;
+      left: 0.4rem;
+      top: 0.4rem;
+    }
+  
+    button {
+      width: 100%;
+      min-height: 2.25rem;
+      color: #ffffff;
+      background-color: #0095ff;
+      border: none;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+  }

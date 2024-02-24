@@ -1,9 +1,10 @@
 import "./Header.scss";
 import logo from "../../assets/logo/BrainFlix-logo.svg";
-import avatar from "../../assets/images/Mohan-muruge.jpg";
+import avatarSrc from "../../assets/images/Mohan-muruge.jpg";
 import search from "../../assets/icons/search.svg";
 import upload from "../../assets/icons/upload.svg";
-
+import Button from '../Button/Button'
+import Avatar from '../Avatar/Avatar'
 
 function Header() {
   return (
@@ -17,14 +18,11 @@ function Header() {
           <input className="search__box" placeholder="Search" />
         </div>
 
-        <div className="avatar">
-          <img className="avatar__image" src={avatar} alt="User Avatar" />
+        <div className="header__avatar">
+            <Avatar avatarSrc={avatarSrc}/>
         </div>
 
-        <div className="upload">
-          <img className="upload__icon" src={upload} alt="Upload Icon" />
-          <button className="upload__button">UPLOAD</button>
-        </div>
+        <Button iconSrc={upload} text="upload"/>
       </nav>
     </header>
   );
