@@ -7,11 +7,12 @@ import Header from "./components/Header/Header.js";
 import VideoDetails from "./components/VideoDetails/VideoDetails.js";
 
 function App() {
-  const activevideo = videos[0];
+  // const activeVideo = videos[0];
+  const [activeVideo, setActiveVideo] = useState(videos[0]);
   return (
     <div className="App">
       <Header />
-      <VideoDetails video={activevideo}/>
+      <VideoDetails videoInfo={activeVideo}/>
     </div>
   );
 }
