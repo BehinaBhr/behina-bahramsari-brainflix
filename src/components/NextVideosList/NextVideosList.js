@@ -3,7 +3,9 @@ import NextVideoItem from "../NextVideoItem/NextVideoItem";
 
 function NextVideosList( { videos, updateActiveVideo } ) {
     return (
-        <ul className="next-videos-list">
+        <section className="next-videos-list">
+        <h3 className="next-videos-list__title">NEXT VIDEOS</h3>
+        <ul className="next-videos-list__body">
             {videos.map((video) => {
                 return (
                     <NextVideoItem 
@@ -14,6 +16,7 @@ function NextVideosList( { videos, updateActiveVideo } ) {
                 )
             })}
         </ul>
+        </section>
     );
 }
 

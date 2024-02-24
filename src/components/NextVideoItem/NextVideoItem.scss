@@ -1,16 +1,44 @@
-.next-video-item{
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.next-video-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-top: 1rem;
+  @include tablet {
+    padding-top: $tablet-space-between;
+  }
+
+  &__image {
+    width: 6.5rem;
+    margin-right: 1rem;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 4px;
+    background-color: $lightsilver;
+  }
+  
+  &__info {
+    align-self: stretch;
+    max-width: 11rem;
     display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    cursor: pointer;
-
-
-    &__image {
-        height: 5rem;
-        width: 5rem;
-        margin-right: 0.5rem;
-        object-fit: cover;
-        object-position: top;
-         
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 13px;
+    line-height: 18px;
+    
+    @include tablet {
+      width: 11rem;
+      font-size: 14px;
+      line-height: 22px;
     }
+  }
+  &__title {
+    font-weight: 600;
+  }
+  &__channel {
+    font-weight: 400;
+  }
 }

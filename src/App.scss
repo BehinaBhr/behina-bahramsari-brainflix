@@ -3,7 +3,8 @@
 .app {
   font-family: "AvenirNextLTPro", Arial, Helvetica, sans-serif;
   background-color: white;
-  
+  display: flex;
+  flex-direction: column;
   @include desktop {
     display: flex;
     flex-direction: row;
