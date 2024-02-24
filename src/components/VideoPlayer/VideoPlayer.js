@@ -1,10 +1,10 @@
 import "./VideoPlayer.scss";
 
-function VideoPlayer({ video, image }) {
+function VideoPlayer({ videoSrc, image }) {
   return (
     <section className="video-player">
         <video controls poster={image}>
-          <source src={video} type="video/mp4" />
+          <source src={videoSrc} type="video/mp4" />
         </video>
     </section>
   );

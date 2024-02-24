@@ -1,0 +1,16 @@
+.next-video-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+
+
+    &__image {
+        height: 5rem;
+        width: 5rem;
+        margin-right: 0.5rem;
+        object-fit: cover;
+        object-position: top;
+         
+    }
+}
