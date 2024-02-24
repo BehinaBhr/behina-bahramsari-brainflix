@@ -1,0 +1,80 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.comment-form {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border-bottom: 1px solid $lightsilver;
+
+    @include tablet {
+        //   margin-right: $tablet-mid-padding;
+        //   margin-left: $tablet-mid-padding;
+        padding-top: 1.75rem;
+    }
+
+    @include desktop {
+        //   width: calc(60% - 2*$tablet-mid-padding);
+        align-self: center;
+    }
+
+    &__avatar {
+        padding-top: 1.7rem;
+    }
+    
+    &__body {
+        width: 100%;
+        padding-left: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__header {
+        margin: 0;
+        padding-bottom: 0.25rem;
+    }
+
+    &__input-wrapper {
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            padding-bottom: 0;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        input {
+            background-color: $lightwhite;
+            padding: 0.75rem;
+            border: 1px solid $lightsilver;
+            border-radius: 4px;
+            box-sizing: border-box;
+            height: 6.25rem;
+            margin-bottom: 1rem;
+            flex: 1;
+
+            @include tablet {
+                padding: 1rem;
+                height: 2.5rem;
+                margin-right: $tablet-space-between;
+                margin-bottom: 0;
+            }
+
+            &:active,
+            &:focus {
+                border: 1px solid $black;
+                outline: none;
+            }
+        }
+
+        ::placeholder {
+            color: $black;
+        }
+    }
+}

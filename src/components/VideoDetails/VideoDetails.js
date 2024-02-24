@@ -1,6 +1,7 @@
 import "./VideoDetails.scss";
 import viewicone from "../../assets/icons/views.svg";
 import likeicone from "../../assets/icons/likes.svg";
+import CommentSection from "../CommentSection/CommentSection";
 import FormattedDate from "../FormattedDate/FormattedDate"
 
 function VideoDetails({ videoInfo }) {
@@ -49,6 +50,7 @@ function VideoDetails({ videoInfo }) {
       <div className="video-details__comments-counter">
         {comments?.length || 0} Comments
       </div>
+      <CommentSection commentsList={comments}/>
     </section>
   );
 }

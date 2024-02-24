@@ -1,0 +1,59 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.body-font {
+    font-size: 13px;
+    line-height: 18px;
+
+    @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+.comment {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0;
+    border-bottom: 1px solid $lightsilver;
+
+    @include tablet {
+        padding: 1.5rem 0;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+        width: 100%;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__name {
+        margin: 0;
+        @extend .body-font;
+        font-weight: 600;
+        color: $black;
+    }
+
+    &__date {
+        margin: 0;
+        @extend .body-font;
+        font-weight: 400;
+        color: $silver;
+    }
+
+    &__text {
+        margin-bottom: 0;
+        @extend .body-font;
+        font-weight: 400;
+        color: $black;
+    }
+}

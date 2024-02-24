@@ -1,0 +1,129 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.video-details {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  
+  @include tablet {
+    padding: $tablet-padding;
+  }
+  
+  > * {
+    padding-top: 1rem;
+  
+    @include tablet {
+      padding-top: $tablet-space-between;
+    }
+  }
+
+  > :first-child {
+    padding-top: 0.5rem;
+    
+    @include tablet {
+      padding-top: 0 !important;
+    }
+  }
+
+  > :not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $lightsilver;
+  }
+
+  &__title {
+    padding-top: 1.5rem;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    
+    @include tablet {
+      span {
+        display: none;
+      }
+      padding-bottom: 0 !important;
+      border: none !important;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+
+    @include tablet {
+      justify-content: space-between;
+      padding-bottom: $tablet-space-between;
+    }
+  }
+
+  &__comments-counter {
+    font-weight: 600;
+  }
+
+  &__info-section {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+    justify-content: space-between;
+    color: $silver;
+    flex: 1;
+
+    > * {
+      align-items: center;
+      display: flex;
+    }
+
+    @include tablet {
+      flex-direction: row;
+      flex: none;
+      padding-right: 0;
+    }
+  }
+
+  &__like-icon {
+    padding-right: 0.5rem;
+  }
+
+  &__channel {
+    color: $black;
+    padding-bottom: 1rem;
+    font-weight: 600;
+
+    @include tablet {
+      padding-bottom: 0;
+      padding-right: $tablet-space-between;
+    }
+  }
+
+  &__views {
+    padding-bottom: 1rem;
+
+    @include tablet {
+      padding-bottom: 0;
+      padding-right: $tablet-space-between;
+    }
+  }
+
+  &__description {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    
+    @include tablet {
+      padding-bottom: 0 !important;
+      border: none !important;
+    }
+  }
+
+  &__comments-counter {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+  }
+}
