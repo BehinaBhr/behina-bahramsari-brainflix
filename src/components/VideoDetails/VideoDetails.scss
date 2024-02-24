@@ -1,20 +1,18 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
 
 .video-details {
   display: flex;
   flex-direction: column;
-
-  > :not(:first-child) {
-    padding: 1rem;
-  }
+  padding: 1rem;
 
   > * {
     padding-top: 1rem;
   }
 
-  &__title {
-    padding-top: 1.5rem;
+  > :first-child {
+    padding-top: 0.5rem;
   }
 
   > :not(:last-child) {
@@ -22,33 +20,26 @@
     border-bottom: 1px solid $silver;
   }
 
-  &__hero {
-    position: relative;
-    width: 100%;
-    max-width: 100vw;
-    background-color: $black;
-    padding-top: 56.25%;
-    overflow: hidden;
+  &__title {
+    padding-top: 1.5rem;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
   }
-  
-  &__player {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+
   &__info {
     display: flex;
     flex-direction: row;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
     > * {
       flex: 1;
     }
   }
 
   &__comments-counter {
-    font-weight: 700;
+    font-weight: 600;
   }
 
   &__info-section {
@@ -71,9 +62,21 @@
   &__channel {
     color: $black;
     padding-bottom: 1rem;
+    font-weight: 600;
   }
 
   &__views {
     padding-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+  &__comments-counter{
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
   }
 }

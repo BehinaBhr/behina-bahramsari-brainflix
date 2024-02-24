@@ -25,11 +25,6 @@ function VideoDetails({ videoInfo }) {
 
   return (
     <section className="video-details">
-      <div className="video-details__hero">
-        <video controls className="video-details__player" poster={image}>
-          <source src={video} type="video/mp4" />
-        </video>
-      </div>
       <h1 className="video-details__title">Tech Trends: {title}</h1>
 
       <div className="video-details__info">
@@ -44,15 +39,15 @@ function VideoDetails({ videoInfo }) {
               className="video-details__like-icon"
               src={viewicone}
               alt="Views Icon"
-            />{" "}
-            {views}{" "}
+            />
+            {views}
           </div>
           <div className="video-details__likes">
             <img
               className="video-details__like-icon"
               src={likeicone}
               alt="Likes Icon"
-            />{" "}
+            />
             {likes}
           </div>
         </div>
