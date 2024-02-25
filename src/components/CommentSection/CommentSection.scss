@@ -1,17 +1,17 @@
-@use "../../styles/partials/colors" as *;
 @use "../../styles/partials/variables" as *;
-@use "../../styles/partials/typography" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/colors" as *;
 
 .comment-section {
   padding-top: 0;
 
-  @include tablet {
-  }
+  > * {
+    border-bottom: 1px solid $lightsilver;
 
-  @include desktop {
-    width: 60%;
-    align-self: center;
+    @include desktop {
+      &:last-child {
+        border-bottom: none;
+      }  
+    }
   }
 }

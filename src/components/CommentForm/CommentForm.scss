@@ -7,9 +7,7 @@
 .comment-form {
   display: flex;
   flex-direction: row;
-  padding-bottom: 1rem;
-  
-  border-bottom: 1px solid $lightsilver;
+  padding-bottom: 1rem;  
   font-size: 13px;
   line-height: 18px;
 
@@ -20,8 +18,8 @@
   }
 
   @include desktop {
-    //   width: calc(60% - 2*$tablet-mid-padding);
     align-self: center;
+    padding-right: $desktop-space-between;
   }
 
   &__avatar {

@@ -18,10 +18,13 @@
     display: flex;
     flex-direction: row;
     padding: 1rem 0;
-    border-bottom: 1px solid $lightsilver;
 
     @include tablet {
         padding: 1.5rem 0;
+    }
+
+    @include desktop {
+        padding-right: $desktop-space-between;
     }
 
     &__info {

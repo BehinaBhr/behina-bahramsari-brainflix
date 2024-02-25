@@ -4,18 +4,18 @@
 
 .avatar {
     background-color: $lightsilver;
-    width: $avatar-width-mobile;
-    height: $avatar-height-mobile;
-    min-width: $avatar-width-mobile;
-    min-height: $avatar-height-mobile;
+    width: $mobile-avatar-width;
+    height: $mobile-avatar-height;
+    min-width: $mobile-avatar-width;
+    min-height: $mobile-avatar-height;
     border-radius: 50%;
     overflow: hidden;
 
     @include tablet {
-        width: $avatar-width-tablet;
-        height: $avatar-height-tablet;
-        min-width: $avatar-width-tablet;
-        min-height: $avatar-height-tablet;
+        width: $tablet-avatar-width;
+        height: $tablet-avatar-height;
+        min-width: $tablet-avatar-width;
+        min-height: $tablet-avatar-height;
     }
 
     &__image {

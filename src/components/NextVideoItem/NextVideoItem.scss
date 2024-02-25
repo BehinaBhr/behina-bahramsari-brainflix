@@ -5,8 +5,8 @@
 .next-video-item {
   display: flex;
   align-items: center;
-  cursor: pointer;
   padding-top: 1rem;
+  
   @include tablet {
     padding-top: $tablet-space-between;
   }

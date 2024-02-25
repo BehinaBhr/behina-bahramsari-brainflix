@@ -26,7 +26,7 @@
     flex-wrap: wrap;
     align-content: space-between;
     align-items: center;
-    
+
     @include tablet {
       flex-wrap: nowrap;
     }
@@ -48,37 +48,37 @@
   }
 
   &__avatar {
-      @include tablet {
-        order: 1;
-      }
+    @include tablet {
+      order: 1;
+    }
   }
 
   &__button {
     flex: 1;
-    
+
     @include tablet {
       padding-right: $tablet-space-between;
     }
   }
-  
+
   &__search {
     position: relative;
-    width: calc(100% - $avatar-width-mobile - 1rem);
+    width: calc(100% - $mobile-avatar-width - 1rem);
     padding-right: 1rem;
     box-sizing: content-box;
-  
+
     @include tablet {
       width: 15rem;
       padding-right: $tablet-space-between;
     }
-  
+
     &__icon {
       position: absolute;
       left: 0.75rem;
       top: 0.6rem;
       color: $black;
     }
-  
+
     &__input {
       border: 1px solid $lightsilver;
       background-color: $lightwhite;
@@ -93,7 +93,7 @@
         padding-left: 36px;
         height: 2.5rem;
       }
-      
+
       &:active,
       &:focus {
         border: 1px solid $blue;

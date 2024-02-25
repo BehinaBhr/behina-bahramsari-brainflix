@@ -8,9 +8,9 @@
   position: relative;
   width: 100%;
   box-sizing: content-box;
-
+  
   @include tablet {
-    width: 9.375rem;
+    width: $button-width-tablet-desktop;
   }
 
   &__icon {
@@ -33,6 +33,7 @@
 
     &:hover {
       background-color: $darkblue;
+      cursor: pointer;
     }
   }
 }
