@@ -6,20 +6,23 @@
   display: flex;
   align-items: center;
   padding-top: 1rem;
-  
+
   @include tablet {
     padding-top: $tablet-space-between;
   }
 
   &__image {
-    width: 6.5rem;
+    width: 6.75rem;
     margin-right: 1rem;
     object-fit: cover;
     object-position: top;
     border-radius: 4px;
     background-color: $lightsilver;
+
+    @include tablet {
+      width: 8rem;
+    }
   }
-  
   &__info {
     align-self: stretch;
     max-width: 11rem;
@@ -32,12 +35,15 @@
     @include tablet {
       width: 11rem;
       font-size: 14px;
-      line-height: 22px;
+    line-height: 22px;
     }
   }
+
   &__title {
     font-weight: 600;
+    line-height: 20px;
   }
+
   &__channel {
     font-weight: 400;
   }
