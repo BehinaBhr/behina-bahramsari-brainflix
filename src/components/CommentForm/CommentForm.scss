@@ -66,13 +66,14 @@
         flex: 1;
         padding: 1rem;
         height: 2.5rem;
+        min-height: 2.5rem;
         margin-right: $tablet-space-between;
         margin-bottom: 0;
       }
 
       &:active,
       &:focus {
-        border: 1px solid $black;
+        border: 1px solid $blue;
         outline: none;
       }
     }

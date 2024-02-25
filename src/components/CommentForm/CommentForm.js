@@ -12,7 +12,7 @@ function CommentForm() {
             </div>
 
             <div className="comment-form__body">
-                <h3 className="comment-form__header" htmlFor="comment-text">JOIN THE CONVERSATION</h3>
+                <div className="comment-form__header" htmlFor="comment-text">JOIN THE CONVERSATION</div>
                 
                 <div className="comment-form__input-wrapper">
                     <input placeholder="Add a new comment" id="comment-text" name="text" data-gramm="false" wt-ignore-input="true">

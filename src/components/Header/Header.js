@@ -13,9 +13,9 @@ function Header() {
         <img className="header__logo-image" src={logo} alt="Brainflix Logo" />
       </div>
       <nav className="header__nav">
-        <div className="search">
-          <img className="search__icon" src={search} alt="Search Icon" />
-          <input className="search__box" placeholder="Search" />
+        <div className="header__search">
+          <img className="header__search__icon" src={search} alt="Search Icon" />
+          <input className="header__search__input" placeholder="Search" />
         </div>
 
         <div className="header__avatar">
