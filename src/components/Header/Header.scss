@@ -51,6 +51,14 @@
         order: 1;
       }
   }
+
+  &__button {
+    padding-right: 1rem;
+
+    @include tablet {
+      padding-right: $tablet-space-between;
+    }
+  }
 }
 
 .search {

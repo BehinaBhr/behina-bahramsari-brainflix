@@ -21,8 +21,10 @@ function Header() {
         <div className="header__avatar">
             <Avatar avatarSrc={avatarSrc}/>
         </div>
+        <div className="header__button">
+          <Button iconSrc={upload} text="upload"/>
+        </div>
 
-        <Button iconSrc={upload} text="upload"/>
       </nav>
     </header>
   );
