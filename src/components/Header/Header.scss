@@ -1,5 +1,6 @@
-@import "../../styles/partials/_mixins.scss";
-@import "../../styles/partials/_variables.scss";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/colors";
 
 .header {
   padding: 1rem;
@@ -24,6 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
+    align-items: center;
 
     @include tablet {
       flex-wrap: nowrap;
@@ -44,80 +46,59 @@
     max-height: 25px;
     align-items: center;
   }
-}
 
-.avatar {
-  width: $avatar-width-mobile;
-  height: $avatar-height-mobile;
-  min-width: $avatar-width-mobile;
-  min-height: $avatar-height-mobile;
-  border-radius: 50%;
-  overflow: hidden;
-
-  @include tablet {
-    order: 1;
-    width: $avatar-width-tablet;
-    height: $avatar-height-tablet;
-    min-width: $avatar-width-tablet;
-    min-height: $avatar-height-tablet;
-  }
-
-  &__image {
-    width: 135%;
-    height: 105%;
-    object-fit: cover;
-  }
-}
-
-.search {
-  position: relative;
-  width: calc(100% - $avatar-width-mobile - 1rem);
-  padding-right: 1rem;
-  box-sizing: content-box;
-
-  @include tablet {
-    width: 15rem;
-    padding-right: $tablet-space-between;
-  }
-
-  &__icon {
-    position: absolute;
-    left: 0.75rem;
-    top: 0.6rem;
-    color: #323232;
-  }
-
-  &__box {
-    width: 100%;
-    padding-left: 36px;
-    border: 1px solid #e1e1e1;
-    border-radius: 4px;
-    min-height: 2.25rem;
-  }
-}
-
-.upload {
-  position: relative;
-  width: 100%;
-  box-sizing: content-box;
-
-  @include tablet {
-    width: 9.375rem;
-    padding-right: $tablet-space-between;
-  }
-
-  &__icon {
-    position: absolute;
-    left: 0.4rem;
-    top: 0.4rem;
+  &__avatar {
+    @include tablet {
+      order: 1;
+    }
   }
 
   &__button {
-    width: 100%;
-    min-height: 2.25rem;
-    color: #ffffff;
-    background-color: #0095ff;
-    border: none;
-    border-radius: 4px;
+    flex: 1;
+
+    @include tablet {
+      padding-right: $tablet-space-between;
+    }
+  }
+
+  &__search {
+    position: relative;
+    width: calc(100% - $mobile-avatar-width - 1rem);
+    padding-right: 1rem;
+    box-sizing: content-box;
+
+    @include tablet {
+      width: 15rem;
+      padding-right: $tablet-space-between;
+    }
+
+    &__icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 0.6rem;
+      color: $black;
+    }
+
+    &__input {
+      border: 1px solid $lightsilver;
+      background-color: $lightwhite;
+      border-radius: 4px;
+      padding: 0.75rem;
+      width: 100%;
+      padding-left: 36px;
+      height: 2.25rem;
+
+      @include tablet {
+        padding: 1rem;
+        padding-left: 36px;
+        height: 2.5rem;
+      }
+
+      &:active,
+      &:focus {
+        border: 1px solid $blue;
+        outline: none;
+      }
+    }
   }
 }

@@ -6,15 +6,22 @@
 .video-details {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  
+  padding-top: 1rem;
+  padding-bottom: 0;
+
   @include tablet {
-    padding: $tablet-padding;
+    padding-top: $tablet-padding;
+    padding-bottom: 0;
   }
-  
+
+  @include desktop {
+    border-right: 1px solid $lightsilver;
+    padding-bottom: $desktop-padding;
+  }
+
   > * {
     padding-top: 1rem;
-  
+
     @include tablet {
       padding-top: $tablet-space-between;
     }
@@ -22,7 +29,7 @@
 
   > :first-child {
     padding-top: 0.5rem;
-    
+
     @include tablet {
       padding-top: 0 !important;
     }
@@ -30,21 +37,27 @@
 
   > :not(:last-child) {
     padding-bottom: 1rem;
-    border-bottom: 1px solid $lightsilver;
+
+    @include tablet {
+      padding-bottom: $tablet-space-between;
+    }
   }
 
   &__title {
     padding-top: 1.5rem;
+    border-bottom: 1px solid $lightsilver;
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
-    
+
     @include tablet {
       span {
         display: none;
       }
       padding-bottom: 0 !important;
-      border: none !important;
+      border: none;
+      font-size: 33px;
+      line-height: 44px;
     }
   }
 
@@ -54,15 +67,20 @@
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
+    border-bottom: 1px solid $lightsilver;
 
     @include tablet {
       justify-content: space-between;
-      padding-bottom: $tablet-space-between;
+      padding-bottom: 0.5rem !important;
+      padding-top: 1rem !important;
+      font-size: 14px;
+      line-height: 22px;
     }
-  }
 
-  &__comments-counter {
-    font-weight: 600;
+    @include desktop {
+      padding-right: $tablet-space-between;
+      padding-top: 0.75rem !important;
+    }
   }
 
   &__info-section {
@@ -113,10 +131,14 @@
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
-    
+
     @include tablet {
-      padding-bottom: 0 !important;
-      border: none !important;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    @include desktop {
+      padding-right: $tablet-space-between;
     }
   }
 
@@ -124,5 +146,10 @@
     font-size: 13px;
     line-height: 18px;
     font-weight: 600;
+    padding-top: 0;
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
   }
 }

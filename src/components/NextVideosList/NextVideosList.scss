@@ -12,8 +12,13 @@
   padding-right: 1rem;
 
   @include tablet {
-    padding: $tablet-padding;
     padding-top: $tablet-space-between;
+  }
+  
+  @include desktop {
+    padding-left: $desktop-space-between;
+    padding-top: 2.25rem;
+    padding-bottom: $desktop-padding;
   }
 
   &__title {
@@ -33,13 +38,5 @@
     flex-direction: column;
     list-style: none;
     padding: 0;
-  }
-
-  > * {
-    padding-left: 1rem;
-
-    @include tablet {
-      padding-left: 0;
-    }
   }
 }

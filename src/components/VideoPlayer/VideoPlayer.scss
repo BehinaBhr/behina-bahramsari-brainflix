@@ -1,21 +1,22 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
+.video-player {
+  width: 100%;
+  height: fit-content;
+  background-color: $darkblack;
 
-  .video-player {
-    position: relative;
-    width: 100%;
-    max-width: 100vw;
-    background-color: $black;
-    padding-top: 56.25%;
-    overflow: hidden;
-    
-    video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  @include tablet {
+    height: 400px;
   }
+
+  @include desktop {
+    height: 500px;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+  }
+}

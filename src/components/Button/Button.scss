@@ -1,0 +1,39 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.button {
+  position: relative;
+  width: 100%;
+  box-sizing: content-box;
+  
+  @include tablet {
+    width: $button-width-tablet-desktop;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0.5rem;
+    top: calc((100% - 1.1rem) / 2);
+    height: 1.1rem;
+  }
+
+  button {
+    width: 100%;
+    min-height: 2.5rem;
+    color: $white;
+    background-color: $blue;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    &:hover {
+      background-color: $darkblue;
+      cursor: pointer;
+    }
+  }
+}

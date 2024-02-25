@@ -1,0 +1,17 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.comment-section {
+  padding-top: 0;
+
+  > * {
+    border-bottom: 1px solid $lightsilver;
+
+    @include desktop {
+      &:last-child {
+        border-bottom: none;
+      }  
+    }
+  }
+}
