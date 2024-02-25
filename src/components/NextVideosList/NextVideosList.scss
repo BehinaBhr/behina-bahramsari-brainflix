@@ -1,0 +1,42 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.next-videos-list {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding-top: 1rem;
+  padding-bottom: 2.25rem;
+  padding-right: 1rem;
+
+  @include tablet {
+    padding-top: $tablet-space-between;
+  }
+  
+  @include desktop {
+    padding-left: $desktop-space-between;
+    padding-top: 2.25rem;
+    padding-bottom: $desktop-padding;
+  }
+
+  &__title {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+    color: $silver;
+
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+  }
+}

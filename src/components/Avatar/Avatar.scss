@@ -1,0 +1,30 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+
+.avatar {
+    background-color: $lightsilver;
+    width: $mobile-avatar-width;
+    height: $mobile-avatar-height;
+    min-width: $mobile-avatar-width;
+    min-height: $mobile-avatar-height;
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include tablet {
+        width: $tablet-avatar-width;
+        height: $tablet-avatar-height;
+        min-width: $tablet-avatar-width;
+        min-height: $tablet-avatar-height;
+    }
+
+    &__image {
+        width: 135%;
+        height: 105%;
+        object-fit: cover;
+
+        &:not([src]) {
+            display: none;
+        }
+    }
+}

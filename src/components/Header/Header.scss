@@ -1,0 +1,104 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/colors";
+
+.header {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include tablet {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: $tablet-padding;
+    padding-right: $tablet-padding;
+  }
+
+  @include desktop {
+    padding-left: $desktop-padding;
+    padding-right: $desktop-padding;
+  }
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: center;
+
+    @include tablet {
+      flex-wrap: nowrap;
+    }
+
+    > * {
+      margin-top: 1rem;
+
+      @include tablet {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    max-height: 25px;
+    align-items: center;
+  }
+
+  &__avatar {
+    @include tablet {
+      order: 1;
+    }
+  }
+
+  &__button {
+    flex: 1;
+
+    @include tablet {
+      padding-right: $tablet-space-between;
+    }
+  }
+
+  &__search {
+    position: relative;
+    width: calc(100% - $mobile-avatar-width - 1rem);
+    padding-right: 1rem;
+    box-sizing: content-box;
+
+    @include tablet {
+      width: 15rem;
+      padding-right: $tablet-space-between;
+    }
+
+    &__icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 0.6rem;
+      color: $black;
+    }
+
+    &__input {
+      border: 1px solid $lightsilver;
+      background-color: $lightwhite;
+      border-radius: 4px;
+      padding: 0.75rem;
+      width: 100%;
+      padding-left: 36px;
+      height: 2.25rem;
+
+      @include tablet {
+        padding: 1rem;
+        padding-left: 36px;
+        height: 2.5rem;
+      }
+
+      &:active,
+      &:focus {
+        border: 1px solid $blue;
+        outline: none;
+      }
+    }
+  }
+}
