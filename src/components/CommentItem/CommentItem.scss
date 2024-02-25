@@ -51,6 +51,7 @@
     }
 
     &__text {
+        padding-top: .5rem;
         margin-bottom: 0;
         @extend .body-font;
         font-weight: 400;

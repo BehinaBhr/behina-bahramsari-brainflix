@@ -4,7 +4,7 @@ import CommentItem from "../CommentItem/CommentItem";
 
 function CommentSection({ commentsList }) {
     return (
-        <section className="comments-list">
+        <section className="comment-section">
             <CommentForm/>
             {
                 commentsList.map((comment) => {
