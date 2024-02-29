@@ -5,6 +5,7 @@ import search from "../../assets/icons/search.svg";
 import upload from "../../assets/icons/upload.svg";
 import Button from '../Button/Button'
 import Avatar from '../Avatar/Avatar'
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -22,7 +23,9 @@ function Header() {
             <Avatar avatarSrc={avatarSrc}/>
         </div>
         <div className="header__button">
+        <Link to="/upload">
           <Button iconSrc={upload} text="upload"/>
+        </Link>
         </div>
 
       </nav>
