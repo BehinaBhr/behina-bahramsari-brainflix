@@ -1,0 +1,22 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.home {
+  font-family: "AvenirNextLTPro", Arial, Helvetica, sans-serif;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+}
