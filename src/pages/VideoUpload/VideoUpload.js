@@ -22,8 +22,12 @@ function VideoUpload() {
     setHasError(false);
     setDescription(event.target.value);
   };
+  const handleCancel = () => {
+    window.location.href = "/";
+  };
 
   const handlerSubmit = (event) => {
+    console.log("behina")
     event.preventDefault();
     if (title.trim() === "" || description.trim() === "") {
       setHasError(true);
@@ -32,8 +36,7 @@ function VideoUpload() {
       setSubmitSuccess(true);
       setTimeout(() => {
         navigate("/");
-    }, 3000);
-      // navigate('/success');
+      }, 3000);
     }
   };
 
@@ -41,49 +44,61 @@ function VideoUpload() {
     <section className="video-upload">
       <h1 className="video-upload__title">Upload Video</h1>
 
-        <form className="video-upload__form" onSubmit={handlerSubmit}>
-
-            <div className="video-upload__form__banner">
-                <div className="video-upload__form__banner__title">
-                    VIDEO THUMBNAIL
-                </div>
-                <img className="video-upload__form__banner__img"
-                    src={thumbnailSrc}
-                    alt="Runner at the starting point of a race"/>
+      <form className="video-upload__form" onSubmit={handlerSubmit}>
+        <div className="video-upload__form__body">
+          <div className="video-upload__form__banner">
+            <div className="video-upload__form__banner__title">
+              VIDEO THUMBNAIL
             </div>
-
-            <div className="video-upload__form__body">
-                <label>
-                title your video
-                </label>
-                <input
-                    onChange={handlerAddTitle}
-                    type="text"
-                    name="title"
-                    placeholder="Add a titile to your video"
-                    value={title}
-                    className="video-upload__form__title"
-                />
-                <label>
-                add a video description
-                </label>
-                <input
-                    onChange={handlerAddDescription}
-                    type="text"
-                    name="description"
-                    placeholder="Add a description to your video"
-                    value={description}
-                    className="video-upload__form__description"
-                />
-            </div>
-
-            <div className="video-upload__form__buttons">
-                <button disabled={submitSuccess}>CANCLE </button>
-                <Button iconSrc={addCommentIcon} text="publish" />
-            </div>
-        </form>
-      {hasError && <div className="error-message">The form has errors, please fix it.</div>}
-      {submitSuccess && <div className="success-wrapper"><div className="success-message">Your Video has successfully published.</div></div>}
+            <img
+              className="video-upload__form__banner__img"
+              src={thumbnailSrc}
+              alt="Runner at the starting point of a race"
+            />
+          </div>
+          <div className="video-upload__form__input-container">
+              <label>title your video</label>
+              <input
+                onChange={handlerAddTitle}
+                type="text"
+                name="title"
+                placeholder="Add a titile to your video"
+                value={title}
+                className="video-upload__form__title"
+              />
+              <label>add a video description</label>
+              <textarea
+                onChange={handlerAddDescription}
+                type="text"
+                name="description"
+                placeholder="Add a description to your video"
+                value={description}
+                className="video-upload__form__description"
+              />
+          </div>
+        </div>
+        <div className="video-upload__form__buttons">
+          <button
+            className="video-upload__form__cancel"
+            disabled={submitSuccess}
+            onClick={handleCancel}
+            type="button"
+          >
+            CANCEL
+          </button>
+          <Button iconSrc={addCommentIcon} text="publish" />
+        </div>
+      </form>
+      {hasError && (
+        <div className="error-message">The form has errors, please fix it.</div>
+      )}
+      {submitSuccess && (
+        <div className="success-wrapper">
+          <div className="success-message">
+            Your Video has successfully published.
+          </div>
+        </div>
+      )}
     </section>
   );
 }
