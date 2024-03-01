@@ -2,8 +2,6 @@
 @use "../../styles/partials/variables" as *;
 
 .video {
-  font-family: "AvenirNextLTPro", Arial, Helvetica, sans-serif;
-  background-color: white;
   display: flex;
   flex-direction: column;
 
@@ -12,11 +10,19 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
-}
-
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
+  
+  &__body {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+  
+    @include tablet {
+      padding: 0 $tablet-padding;
+    }
+  
+    @include desktop {
+      padding: 0 $desktop-padding;
+      flex-direction: row;
+    }
+  }
 }

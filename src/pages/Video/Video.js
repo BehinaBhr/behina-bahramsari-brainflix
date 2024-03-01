@@ -1,27 +1,43 @@
 import "./Video.scss";
-// import { useState } from "react";
-// import videos from "./data/videos.json";
-// import videoDetails from "../data/video-details.json";
+import { useParams } from "react-router-dom";
 
-// import Header from "../../components/Header/Header.js";
-// import VideoDetails from "./components/VideoDetails/VideoDetails.js";
-// import VideoPlayer from "./components/VideoPlayer/VideoPlayer.js";
-// import NextVideosList from "../../components/NextVideosList/NextVideosList.js";
+import { useState, useEffect } from "react";
+import VideoDetails from "../../components/VideoDetails/VideoDetails";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer"
+import NextVideosList from "../../components/NextVideosList/NextVideosList.js";
+import axios from "axios"
 
 function Video() {
-  // const [activeVideoId, setActiveVideoID] = useState('videoDetails[0]');
+  const params = useParams();
+  const activeVideoId = params.videoId;
+  const [videoInfo, setVideoInfo] = useState({});
+  const [hasError, setHasError] = useState(false);
+    
+  useEffect(() => {
+    const api_url =
+      "https://unit-3-project-api-0a5620414506.herokuapp.com/videos";
+    const api_key = "1bd38d36-1da0-41c5-9422-56595e6a69d0";
+    const videoDetailsAPI_URL = `${api_url}/${activeVideoId}?api_key=${api_key}`;
 
-  // function updateActiveVideo(clickedId) {
-  //   setActiveVideoID(clickedId);
-  // }
+    const fetchVideos = async () => {
+      try {
+        const response = await axios.get(videoDetailsAPI_URL);
+
+        setVideoInfo(response.data);
+      } catch (error) {
+        setHasError(true);
+      }
+    };
+
+    fetchVideos();
+  }, [videoInfo]);
 
   return (
     <div className="video">
-      {/* <VideoPlayer videoSrc={activeVideo.video} image={activeVideo.image} /> */}
+      <VideoPlayer videoSrc={videoInfo.video} image={videoInfo.image} />
       <main className="video__body">
-        HELLO VIDEO
-        {/* <VideoDetails videoInfo={activeVideo} /> */}
-        {/* <NextVideosList activeVideoId={activeVideoId} /> */}
+        <VideoDetails videoInfo={videoInfo} />
+        <NextVideosList activeVideoId={activeVideoId} />
       </main>
     </div>
   );

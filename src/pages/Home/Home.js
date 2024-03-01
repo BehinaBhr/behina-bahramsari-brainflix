@@ -1,11 +1,4 @@
 import "./Home.scss";
-// import { useState } from "react";
-// import videos from "./data/videos.json";
-// import videoDetails from "../data/video-details.json";
-
-// import Header from "../../components/Header/Header.js";
-// import VideoDetails from "./components/VideoDetails/VideoDetails.js";
-// import VideoPlayer from "./components/VideoPlayer/VideoPlayer.js";
 import NextVideosList from "../../components/NextVideosList/NextVideosList";
 
 function Home() {
