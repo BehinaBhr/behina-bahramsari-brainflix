@@ -16,7 +16,6 @@ function NextVideosList({ activeVideoId }) {
       try {
         const response = await axios.get(videosAPI_URL);
         const videos = response.data;
-
         const filteredVideosList = videos.filter(
           (video) => video.id !== activeVideoId
         );
