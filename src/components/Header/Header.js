@@ -29,7 +29,9 @@ function Header() {
           <Avatar avatarSrc={avatarSrc} />
         </div>
         <div className="header__button">
-          <Button iconSrc={upload} text="upload" />
+        <Link to="/upload">
+          <Button iconSrc={upload} text="upload"/>
+        </Link>
         </div>
       </nav>
     </header>
