@@ -7,7 +7,7 @@
 .comment-form {
   display: flex;
   flex-direction: row;
-  padding-bottom: 1rem;  
+  padding-bottom: 1rem;
   font-size: 13px;
   line-height: 18px;
 
@@ -56,9 +56,9 @@
       border: 1px solid $lightsilver;
       border-radius: 4px;
       box-sizing: border-box;
-      height: 6.25rem; 
+      height: 6.25rem;
       margin-bottom: 1rem;
-      
+      position: relative;
 
       @include tablet {
         flex: 1;
@@ -77,6 +77,10 @@
     }
 
     ::placeholder {
+      // To position the placeholder text at the top of input
+      position: absolute;
+      top: 0.75rem; 
+      left: 1rem; 
       color: $black;
     }
   }

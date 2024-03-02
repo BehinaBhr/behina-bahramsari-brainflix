@@ -5,8 +5,7 @@ import CommentSection from "../CommentSection/CommentSection";
 import FormattedDate from "../FormattedDate/FormattedDate";
 
 function VideoDetails({ videoInfo }) {
-  const { title, channel, timestamp, views, likes, description, comments } =
-    videoInfo;
+  const { title, channel, timestamp, views, likes, description, comments } = videoInfo;
 
   return (
     <section className="video-details">

@@ -1,0 +1,28 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.video {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  &__body {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+  
+    @include tablet {
+      padding: 0 $tablet-padding;
+    }
+  
+    @include desktop {
+      padding: 0 $desktop-padding;
+      flex-direction: row;
+    }
+  }
+}
