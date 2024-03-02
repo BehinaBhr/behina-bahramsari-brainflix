@@ -1,0 +1,23 @@
+@use "../../styles/partials/colors" as *;
+
+.success-overlay {
+    position: fixed;
+    display: flex;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: start;
+    align-items: start;
+    z-index: 9999;
+}
+
+.success-box {
+    background: $lightgreen;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px $green;
+    text-align: center;
+    width: 100%;
+}
