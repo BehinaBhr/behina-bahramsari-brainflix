@@ -6,8 +6,11 @@ import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import NextVideosList from "../../components/NextVideosList/NextVideosList";
 import Error from "../../components/Error/Error";
 import axios from "axios";
+import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
+
 
 function Video() {
+  DocumentTitle('Video Page');
   const params = useParams();
   const activeVideoId = params.videoId;
   const [videoInfo, setVideoInfo] = useState({});

@@ -2,12 +2,13 @@ import "./VideoUpload.scss";
 import thumbnailSrc from "../../assets/images/Upload-video-preview.jpg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import Button from "../../components/Button/Button";
 import Success from "../../components/Success/Success";
 import addCommentIcon from "../../assets/icons/publish.svg";
+import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
 
 function VideoUpload() {
+  DocumentTitle("Video Upload Page");
   const navigate = useNavigate();
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errors, setErrors] = useState([]);
