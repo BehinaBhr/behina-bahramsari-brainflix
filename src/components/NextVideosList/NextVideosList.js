@@ -19,7 +19,6 @@ function NextVideosList({ activeVideoId }) {
         const filteredVideosList = videos.filter(
           (video) => video.id !== activeVideoId
         );
-
         setVideos(filteredVideosList);
       } catch (error) {
         setHasError(true);
@@ -27,7 +26,7 @@ function NextVideosList({ activeVideoId }) {
     };
 
     fetchVideos();
-  }, []);
+  }, [activeVideoId]);
 
   if (hasError) {
     return <p>Unable to access videos right now. Please try again later.</p>;

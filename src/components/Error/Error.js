@@ -2,8 +2,8 @@ import "./Error.scss";
 
 function Error() {
     return (
-        <div class="error-overlay">
-        <div class="error-box">
+        <div className="error-overlay">
+        <div className="error-box">
             <h2>Error</h2>
             <p> Looks like something went wrong!
               Please try again!</p>
