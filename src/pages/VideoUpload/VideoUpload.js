@@ -112,8 +112,8 @@ function VideoUpload() {
         </div>
       </form>
       {errors.length > 0 && (
-        <div class="video-upload__form__error">
-          <div class="video-upload__form__error-box">
+        <div className="video-upload__form__error">
+          <div className="video-upload__form__error-box">
             <p> All fields are required!</p>
           </div>
         </div>
