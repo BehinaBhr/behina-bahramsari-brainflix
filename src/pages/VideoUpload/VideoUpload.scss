@@ -162,6 +162,9 @@
         border: 1px solid $blue;
         outline: none;
       }
+      &--error{
+      border: 1px solid red;
+      }
     }
 
     &__title {
@@ -217,5 +220,27 @@
         margin-right: $tablet-space-between;
       }
     }
+
+  //   &__error {
+  //     position: fixed;
+  //     display: flex;
+  //     top: 5rempx;
+  //     left: 0;
+  //     width: 100%;
+  //     height: fit-content;
+  //     background: rgba(0, 0, 0, 0.5);
+  //     justify-content: start;
+  //     align-items: start;
+  //     z-index: 9999;
+  // }
+  
+  &__error-box {
+      background: $fadered;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+      width: 100%;
+      color: $red;
+  }
   }
 }

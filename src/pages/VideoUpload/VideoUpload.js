@@ -4,39 +4,51 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Button from "../../components/Button/Button";
+import Success from "../../components/Success/Success";
 import addCommentIcon from "../../assets/icons/publish.svg";
 
 function VideoUpload() {
   const navigate = useNavigate();
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [hasError, setHasError] = useState(false);
+  const [errors, setErrors] = useState([]);
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   const handlerAddTitle = (event) => {
-    setHasError(false);
+    setErrors(errors.filter(item => item !== 'title'));
     setTitle(event.target.value);
   };
+
   const handlerAddDescription = (event) => {
-    setHasError(false);
+    setErrors(errors.filter(item => item !== 'description'));
     setDescription(event.target.value);
   };
+
   const handleCancel = () => {
     window.location.href = "/";
   };
 
   const handlerSubmit = (event) => {
-    console.log("behina")
+    const errors = [];
+
     event.preventDefault();
-    if (title.trim() === "" || description.trim() === "") {
-      setHasError(true);
-      setSubmitSuccess(false);
-    } else {
+    
+    if (title.trim() === "") {
+      errors.push('title')
+    }
+
+    if (description.trim() === "") {
+      errors.push('description')
+    }
+
+    if (errors.length === 0) {
       setSubmitSuccess(true);
       setTimeout(() => {
         navigate("/");
       }, 3000);
+    } else {
+      setErrors(errors);
     }
   };
 
@@ -57,24 +69,30 @@ function VideoUpload() {
             />
           </div>
           <div className="video-upload__form__input-container">
-              <label>title your video</label>
-              <input
-                onChange={handlerAddTitle}
-                type="text"
-                name="title"
-                placeholder="Add a titile to your video"
-                value={title}
-                className="video-upload__form__title"
-              />
-              <label>add a video description</label>
-              <textarea
-                onChange={handlerAddDescription}
-                type="text"
-                name="description"
-                placeholder="Add a description to your video"
-                value={description}
-                className="video-upload__form__description"
-              />
+            <label>title your video</label>
+            <input
+              onChange={handlerAddTitle}
+              type="text"
+              name="title"
+              placeholder="Add a titile to your video"
+              value={title}
+              className={`video-upload__form__title ${
+                errors.includes('title') ? "video-upload__form__title--error" : ""
+              }`}
+            />
+            <label>add a video description</label>
+            <textarea
+              onChange={handlerAddDescription}
+              type="text"
+              name="description"
+              placeholder="Add a description to your video"
+              value={description}
+              className={`video-upload__form__description ${
+                errors.includes('description')
+                  ? "video-upload__form__description--error"
+                  : ""
+              }`}
+            />
           </div>
         </div>
         <div className="video-upload__form__buttons">
@@ -82,23 +100,20 @@ function VideoUpload() {
             className="video-upload__form__cancel"
             disabled={submitSuccess}
             onClick={handleCancel}
-            type="button"
-          >
+            type="button">
             CANCEL
           </button>
           <Button iconSrc={addCommentIcon} text="publish" />
         </div>
       </form>
-      {hasError && (
-        <div className="error-message">The form has errors, please fix it.</div>
-      )}
-      {submitSuccess && (
-        <div className="success-wrapper">
-          <div className="success-message">
-            Your Video has successfully published.
+      {errors.length > 0 && (
+        <div class="video-upload__form__error">
+          <div class="video-upload__form__error-box">
+            <p> All fields are required!</p>
           </div>
         </div>
       )}
+      {submitSuccess && <Success />}
     </section>
   );
 }
