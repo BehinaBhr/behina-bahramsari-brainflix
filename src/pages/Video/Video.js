@@ -54,7 +54,7 @@ function Video() {
       <VideoPlayer videoSrc={videoInfo.video} image={videoInfo.image} />
       <div className="video__body">
         <VideoDetails videoInfo={videoInfo} />
-        <NextVideosList activeVideoId={activeVideoId} />
+        <NextVideosList activeVideoId={videoInfo.id} />
       </div>
       {hasError && <Error/>}
     </main>
