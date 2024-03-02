@@ -16,30 +16,31 @@ function VideoUpload() {
   const [description, setDescription] = useState("");
 
   const handlerAddTitle = (event) => {
-    setErrors(errors.filter(item => item !== 'title'));
+    setErrors(errors.filter((item) => item !== "title"));
     setTitle(event.target.value);
   };
 
   const handlerAddDescription = (event) => {
-    setErrors(errors.filter(item => item !== 'description'));
+    setErrors(errors.filter((item) => item !== "description"));
     setDescription(event.target.value);
   };
 
   const handleCancel = () => {
-    window.location.href = "/";
+    // window.location.href = "/";
+    navigate("/");
   };
 
   const handlerSubmit = (event) => {
     const errors = [];
 
     event.preventDefault();
-    
+
     if (title.trim() === "") {
-      errors.push('title')
+      errors.push("title");
     }
 
     if (description.trim() === "") {
-      errors.push('description')
+      errors.push("description");
     }
 
     if (errors.length === 0) {
@@ -77,7 +78,9 @@ function VideoUpload() {
               placeholder="Add a titile to your video"
               value={title}
               className={`video-upload__form__title ${
-                errors.includes('title') ? "video-upload__form__title--error" : ""
+                errors.includes("title")
+                  ? "video-upload__form__title--error"
+                  : ""
               }`}
             />
             <label>add a video description</label>
@@ -88,7 +91,7 @@ function VideoUpload() {
               placeholder="Add a description to your video"
               value={description}
               className={`video-upload__form__description ${
-                errors.includes('description')
+                errors.includes("description")
                   ? "video-upload__form__description--error"
                   : ""
               }`}
@@ -100,7 +103,8 @@ function VideoUpload() {
             className="video-upload__form__cancel"
             disabled={submitSuccess}
             onClick={handleCancel}
-            type="button">
+            type="button"
+          >
             CANCEL
           </button>
           <Button iconSrc={addCommentIcon} text="publish" />
