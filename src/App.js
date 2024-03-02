@@ -1,37 +1,21 @@
 import "./App.scss";
-import { useState } from "react";
-import videos from "./data/videos.json";
-import videoDetails from "./data/video-details.json";
-
-import Header from "./components/Header/Header.js";
-import VideoDetails from "./components/VideoDetails/VideoDetails.js";
-import VideoPlayer from "./components/VideoPlayer/VideoPlayer.js";
-import NextVideosList from "./components/NextVideosList/NextVideosList.js";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import Video from "./pages/Video/Video";
+import NotFound from "./pages/NotFound/NotFound";
+import Header from "./components/Header/Header"
 
 function App() {
-  const [activeVideo, setActiveVideo] = useState(videoDetails[0]);
-
-  function updateActiveVideo(clickedId) {
-    const newActiveVideo = videoDetails.find((video) => video.id === clickedId);
-
-    setActiveVideo(newActiveVideo);
-  }
-
-  const filteredVideosList = videos.filter(
-    (video) => video.id !== activeVideo.id
-  );
-
   return (
     <div className="app">
-      <Header />
-      <VideoPlayer videoSrc={activeVideo.video} image={activeVideo.image} />
-      <main className="app__body">
-        <VideoDetails videoInfo={activeVideo} />
-        <NextVideosList
-          videos={filteredVideosList}
-          updateActiveVideo={updateActiveVideo}
-        />
-      </main>
+      <BrowserRouter>
+        <Header />
+        
+        <Routes>
+          <Route path="/" element={<Video />} />
+          <Route path="videos/:videoId" element={<Video />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
