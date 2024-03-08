@@ -294,9 +294,16 @@
     ]
   },
   {
-    "id": "a74da88d-897b-4865-b92d-9b680f061884",
-    "title": "mamad",
-    "description": "amat",
-    "thumbnail": "../public/Upload-video-preview.jpg"
+    "id": "13a4a861-0846-423d-994a-65a5fc867ddb",
+    "title": "new uploaded video",
+    "description": "it is a fun video, YOu will love it.",
+    "channel": "",
+    "views": 0,
+    "likes": 0,
+    "duration": "00:00",
+    "image": "../public/Upload-video-preview.jpg",
+    "video": "",
+    "comments": [],
+    "timestamp": 1709877260051
   }
 ]

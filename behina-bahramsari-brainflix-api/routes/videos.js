@@ -43,15 +43,38 @@ router
     }));
     res.status(200).json(videosList);
   })
-// Add Video to videosdata in Upload page:
+
+  // Add Video to videosdata in Upload page:
   .post(postValidator, (req, res) => {
-    const { title, description } = req.body;
+    const {
+      title,
+      channel,
+      image,
+      description,
+      views,
+      likes,
+      duration,
+      video,
+      comments,
+    } = req.body;
+    // Set default values for missing data
+    const defaultImage = "/path/to/default-image.jpg";
+    const defaultValues = {
+      channel: "",
+      views: 0,
+      likes: 0,
+      duration: "00:00",
+      image: "../public/Upload-video-preview.jpg",
+      video:"",
+      comments: [],
+    };
     const videos = getVideos();
     const newVideo = {
       id: uuidv4(),
       title,
       description,
-      thumbnail: "../public/Upload-video-preview.jpg", // Hardcoded image path
+      ...defaultValues,
+      timestamp: Date.now(),
     };
 
     videos.push(newVideo);
