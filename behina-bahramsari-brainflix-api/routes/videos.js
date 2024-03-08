@@ -65,7 +65,7 @@ router
       likes: 0,
       duration: "00:00",
       image: "../public/Upload-video-preview.jpg",
-      video:"",
+      video: "",
       comments: [],
     };
     const videos = getVideos();
@@ -97,4 +97,60 @@ router.route("/:videoId").get((req, res) => {
   res.status(200).json(foundVideo);
 });
 
+// Add Comment to activeVideo:
+router
+  .route("/:videoId/comments")
+  .post((req, res) => {
+    const videoId = req.params.videoId;
+    const { name, comment } = req.body;
+
+    const videos = getVideos();
+
+    const foundVideo = videos.find((video) => video.id === videoId);
+
+    if (!foundVideo) {
+      return res.status(404).json({ error: "Video not found" });
+    }
+
+    const newComment = {
+      id: uuidv4(),
+      name,
+      comment,
+      timestamp: Date.now(),
+    };
+
+    foundVideo.comments.push(newComment);
+    setVideos(videos);
+
+    res.status(201).json(newComment);
+  })
+
+// Delete specific comment of activeVideo:
+  router
+  .route("/:videoId/comments/:commentId")
+  .delete((req, res) => {
+    const videoId = req.params.videoId;
+    const commentId = req.params.commentId;
+
+    const videos = getVideos();
+
+    const foundVideo = videos.find((video) => video.id === videoId);
+
+    if (!foundVideo) {
+      return res.status(404).json({ error: "Video not found" });
+    }
+
+    const commentIndex = foundVideo.comments.findIndex(
+      (comment) => comment.id === commentId
+    );
+
+    if (commentIndex === -1) {
+      return res.status(404).json({ error: "Comment not found" });
+    }
+
+    const deletedComment = foundVideo.comments.splice(commentIndex, 1)[0];
+    setVideos(videos);
+
+    res.status(200).json(deletedComment);
+  });
 module.exports = router;
