@@ -1,6 +1,7 @@
 import "./NextVideosList.scss";
 import NextVideoItem from "../NextVideoItem/NextVideoItem";
 import { useState, useEffect } from "react";
+import { BASE_URL } from "../../api-base-url";
 import axios from "axios";
 
 function NextVideosList({ activeVideoId }) {
@@ -8,9 +9,7 @@ function NextVideosList({ activeVideoId }) {
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    const api_url =  "https://unit-3-project-api-0a5620414506.herokuapp.com/videos";
-    const api_key = "1bd38d36-1da0-41c5-9422-56595e6a69d0";
-    const videosAPI_URL = `${api_url}?api_key=${api_key}`;
+    const videosAPI_URL = `${BASE_URL}/videos`;
 
     const fetchVideos = async () => {
       try {

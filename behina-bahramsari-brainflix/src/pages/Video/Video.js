@@ -1,6 +1,7 @@
 import "./Video.scss";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { BASE_URL } from "../../api-base-url";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import NextVideosList from "../../components/NextVideosList/NextVideosList";
@@ -16,13 +17,9 @@ function Video() {
   const [videoInfo, setVideoInfo] = useState({});
   const [hasError, setHasError] = useState(false);
 
-  const api_url =
-    "https://unit-3-project-api-0a5620414506.herokuapp.com/videos";
-  const api_key = "1bd38d36-1da0-41c5-9422-56595e6a69d0";
-
   const fetchVideo = async (videoId) => {
     try {
-      const videoDetailsAPI_URL = `${api_url}/${videoId}?api_key=${api_key}`;
+      const videoDetailsAPI_URL = `${BASE_URL}/videos/${videoId}`;
       const response = await axios.get(videoDetailsAPI_URL);
       setVideoInfo(response.data);
       setHasError(false);
@@ -33,7 +30,7 @@ function Video() {
 
   const fetchDefaultVideo = async () => {
     try {
-      const videoListAPI_URL = `${api_url}?api_key=${api_key}`;
+      const videoListAPI_URL = `${BASE_URL}/videos`;
       const response = await axios.get(videoListAPI_URL);
       fetchVideo(response.data[0].id);
     } catch (error) {

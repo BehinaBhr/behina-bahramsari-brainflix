@@ -1,5 +1,6 @@
 import "./NextVideoItem.scss";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../api-base-url";
 
 function NextVideoItem({ video }) {
   return (
@@ -7,7 +8,7 @@ function NextVideoItem({ video }) {
       <Link className="next-video-item__link" to={`/videos/${video.id}`}>
         <img
           className="next-video-item__image"
-          src={video.image}
+          src={`${BASE_URL}/${video.image}`}
           alt={video.name}
         />
         <div className="next-video-item__info">

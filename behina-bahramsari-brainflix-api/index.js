@@ -1,5 +1,11 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
+
+app.use(express.static("public"));
+
+// To link API to frontend
+app.use(cors());
 
 const videosRouter = require('./routes/videos');
 

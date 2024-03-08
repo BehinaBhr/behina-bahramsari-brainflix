@@ -64,7 +64,7 @@ router
       views: 0,
       likes: 0,
       duration: "00:00",
-      image: "../public/Upload-video-preview.jpg",
+      image: "/Upload-video-preview.jpg",
       video: "",
       comments: [],
     };
