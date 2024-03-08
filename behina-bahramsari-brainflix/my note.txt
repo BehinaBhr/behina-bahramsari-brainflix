@@ -1,0 +1,11 @@
+<Route path="/upload" element={<VideoUpload />} /> 
+
+
+"api_key": "1bd38d36-1da0-41c5-9422-56595e6a69d0"
+
+Returns an array of video objects, Contains only enough information to display in side bar:
+https://unit-3-project-api-0a5620414506.herokuapp.com/videos?api_key=1bd38d36-1da0-41c5-9422-56595e6a69d0
+
+GET /videos/:id
+be replaced with the actual ID of a video as found in the list of videos, Returns a detailed object of a single video
+Details include the list of comments for that video:https://unit-3-project-api-0a5620414506.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8
