@@ -1,6 +1,7 @@
 import "./CommentItem.scss";
 import Avatar from "../Avatar/Avatar"
-import FormattedDate from "../FormattedDate/FormattedDate"
+import {timestampToDate} from '../../utils/utils';
+
 
 function CommentItem({ comment }) {
     return (
@@ -9,7 +10,9 @@ function CommentItem({ comment }) {
             <div className="comment__info">
                 <div className="comment__header">
                     <h3 className="comment__name">{comment.name}</h3>
-                    <div className="comment__date"><FormattedDate timestamp={comment.timestamp}/></div>
+                    <div className="comment__date">
+                        <div className="date">{timestampToDate(comment.timestamp)}</div>
+                    </div>
                 </div>
                 <p className="comment__text">{comment.comment}</p>
             </div>

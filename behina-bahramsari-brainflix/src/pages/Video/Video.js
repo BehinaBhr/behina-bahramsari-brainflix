@@ -7,8 +7,7 @@ import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import NextVideosList from "../../components/NextVideosList/NextVideosList";
 import Error from "../../components/Error/Error";
 import axios from "axios";
-import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
-
+import { DocumentTitle} from '../../utils/utils';
 
 function Video() {
   DocumentTitle('Video Page');

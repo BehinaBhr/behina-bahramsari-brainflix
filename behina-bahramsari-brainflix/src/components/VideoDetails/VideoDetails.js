@@ -2,7 +2,7 @@ import "./VideoDetails.scss";
 import viewicone from "../../assets/icons/views.svg";
 import likeicone from "../../assets/icons/likes.svg";
 import CommentSection from "../CommentSection/CommentSection";
-import FormattedDate from "../FormattedDate/FormattedDate";
+import {timestampToDate} from '../../utils/utils';
 
 function VideoDetails({ videoInfo }) {
   const { title, channel, timestamp, views, likes, description, comments } = videoInfo;
@@ -18,7 +18,7 @@ function VideoDetails({ videoInfo }) {
         <div className="video-details__info-section">
           <div className="video-details__channel">By {channel}</div>
           <div className="video-details__date">
-            <FormattedDate timestamp={timestamp} />
+            <div className="date">{timestampToDate(timestamp)}</div>
           </div>
         </div>
         <div className="video-details__info-section">

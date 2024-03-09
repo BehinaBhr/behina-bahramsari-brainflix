@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Success from "../../components/Success/Success";
 import addCommentIcon from "../../assets/icons/publish.svg";
-import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
+import { DocumentTitle} from '../../utils/utils';
 
 function VideoUpload() {
   DocumentTitle("Video Upload Page");

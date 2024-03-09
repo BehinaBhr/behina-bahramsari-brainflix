@@ -17,6 +17,7 @@
   @include desktop {
     border-right: 1px solid $lightsilver;
     padding-bottom: $desktop-padding;
+    width: 45rem;
   }
 
   > * {

@@ -1,4 +1,5 @@
-import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
+import { DocumentTitle} from '../../utils/utils';
+
 
 function NotFound() {
   DocumentTitle("NotFound Page");
