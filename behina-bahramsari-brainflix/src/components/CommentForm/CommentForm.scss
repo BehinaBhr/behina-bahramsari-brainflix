@@ -1,0 +1,95 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.comment-form {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 1rem;
+  font-size: 13px;
+  line-height: 18px;
+
+  @include tablet {
+    padding-bottom: $tablet-space-between;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  @include desktop {
+    align-self: center;
+    padding-right: $desktop-space-between;
+  }
+
+  &__avatar {
+    padding-top: 1.7rem;
+  }
+
+  &__body {
+    width: 100%;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    margin: 0;
+    padding-bottom: 0.25rem;
+    font-weight: 600;
+    color: $silver;
+  }
+
+  &__input-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      padding-bottom: 0;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    input {
+      background-color: $lightwhite;
+      padding: 0.75rem;
+      border: 1px solid $lightsilver;
+      border-radius: 4px;
+      box-sizing: border-box;
+      height: 6.25rem;
+      margin-bottom: 1rem;
+      position: relative;
+
+      @include tablet {
+        flex: 1;
+        padding: 1rem;
+        height: 2.5rem;
+        min-height: 2.5rem;
+        margin-right: $tablet-space-between;
+        margin-bottom: 0;
+      }
+
+      &:active,
+      &:focus {
+        border: 1px solid $blue;
+        outline: none;
+      }
+      &.error {
+        border: 1px solid red;
+      }
+    }
+
+    ::placeholder {
+      // To position the placeholder text at the top of input
+      position: absolute;
+      top: 0.75rem; 
+      left: 1rem; 
+      color: $black;
+    }
+  }
+  
+  .form-error {
+    margin-top: 1rem;
+  }
+}
+
