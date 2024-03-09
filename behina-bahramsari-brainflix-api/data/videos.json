@@ -341,6 +341,12 @@
         "name": " current user",
         "comment": "the new comment for new upload video",
         "timestamp": 1709974832203
+      },
+      {
+        "id": "abeeab33-a90b-4e6c-a6fb-76ae280c695f",
+        "name": " current user",
+        "comment": "test the clear input functionality",
+        "timestamp": 1709975046806
       }
     ]
   }

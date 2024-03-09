@@ -74,6 +74,9 @@
         border: 1px solid $blue;
         outline: none;
       }
+      &.error {
+        border: 1px solid red;
+      }
     }
 
     ::placeholder {

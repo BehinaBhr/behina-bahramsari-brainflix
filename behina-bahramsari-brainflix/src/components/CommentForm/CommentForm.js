@@ -6,16 +6,14 @@ import Button from "../Button/Button";
 import { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../api-base-url";
-import FormError from "../../components/FormError/FormError"
+import FormError from "../../components/FormError/FormError";
 
 function CommentForm({ activeVideoId, triggerMainVideo }) {
   const [comment, setComment] = useState("");
-  //   const [hasErrors, setHasErrors] = useState(false);
   const [errors, setErrors] = useState([]);
 
   const handlerComment = (event) => {
     setComment(event.target.value);
-    // setHasError(false);
     setErrors([]);
   };
 
@@ -26,6 +24,7 @@ function CommentForm({ activeVideoId, triggerMainVideo }) {
     if (comment.trim() === "") {
       setErrors(["comment"]);
     } else {
+      event.target.reset();
       addCommentToServer();
     }
   };
@@ -33,7 +32,7 @@ function CommentForm({ activeVideoId, triggerMainVideo }) {
   const addCommentToServer = async () => {
     try {
       await axios.post(BASE_URL + `/videos/${activeVideoId}/comments`, {
-        name: " current user",
+        name: "current user",
         comment: comment,
       });
       triggerMainVideo();
@@ -67,7 +66,6 @@ function CommentForm({ activeVideoId, triggerMainVideo }) {
         </div>
         {errors.length > 0 && !errors.includes("API ERROR") && (
           <FormError message="All fields are required!" />
-          
         )}
         {errors.includes("API ERROR") && (
           <FormError message="Something went wrong on the API server!" />
