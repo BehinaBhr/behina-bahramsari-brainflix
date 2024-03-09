@@ -48,23 +48,16 @@ router
   .post(postValidator, (req, res) => {
     const {
       title,
-      channel,
       image,
       description,
-      views,
-      likes,
-      duration,
-      video,
-      comments,
     } = req.body;
+    
     // Set default values for missing data
-    const defaultImage = "/path/to/default-image.jpg";
     const defaultValues = {
-      channel: "",
+      channel: "Anonymous",
       views: 0,
       likes: 0,
       duration: "00:00",
-      image: "/Upload-video-preview.jpg",
       video: "",
       comments: [],
     };
@@ -73,6 +66,7 @@ router
       id: uuidv4(),
       title,
       description,
+      image,
       ...defaultValues,
       timestamp: Date.now(),
     };

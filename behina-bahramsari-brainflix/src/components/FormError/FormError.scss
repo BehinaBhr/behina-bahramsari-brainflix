@@ -1,0 +1,11 @@
+@use "../../styles/partials/colors" as *;
+.form-error {
+  &__box {
+    background: $fadered;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    color: $red;
+  }
+}

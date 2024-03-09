@@ -4,7 +4,7 @@ import likeicone from "../../assets/icons/likes.svg";
 import CommentSection from "../CommentSection/CommentSection";
 import {timestampToDate} from '../../utils/utils';
 
-function VideoDetails({ videoInfo }) {
+function VideoDetails({ videoInfo, triggerMainVideo }) {
   const { title, channel, timestamp, views, likes, description, comments } = videoInfo;
 
   return (
@@ -46,7 +46,7 @@ function VideoDetails({ videoInfo }) {
       <div className="video-details__comments-counter">
         {comments?.length || 0} Comments
       </div>
-      <CommentSection commentsList={comments} />
+      <CommentSection commentsList={comments} activeVideoId={videoInfo.id} triggerMainVideo={triggerMainVideo}/>
     </section>
   );
 }

@@ -5,7 +5,10 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Success from "../../components/Success/Success";
 import addCommentIcon from "../../assets/icons/publish.svg";
-import { DocumentTitle} from '../../utils/utils';
+import { DocumentTitle } from "../../utils/utils";
+import { BASE_URL } from "../../api-base-url";
+import axios from "axios";
+import FormError from "../../components/FormError/FormError";
 
 function VideoUpload() {
   DocumentTitle("Video Upload Page");
@@ -27,11 +30,27 @@ function VideoUpload() {
   };
 
   const handleCancel = () => {
-    // window.location.href = "/";
     navigate("/");
   };
 
-  const handlerSubmit = (event) => {
+  const uploadVideoToServer = async () => {
+    try {
+      await axios.post(BASE_URL + `/videos/`, {
+        title: title,
+        description: description,
+        image: "images/Upload-video-preview.jpg",
+      });
+
+      setSubmitSuccess(true);
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    } catch {
+      setErrors(["API ERROR"]);
+    }
+  };
+
+  const submitHandler = (event) => {
     const errors = [];
 
     event.preventDefault();
@@ -45,10 +64,7 @@ function VideoUpload() {
     }
 
     if (errors.length === 0) {
-      setSubmitSuccess(true);
-      setTimeout(() => {
-        navigate("/");
-      }, 3000);
+      uploadVideoToServer();
     } else {
       setErrors(errors);
     }
@@ -58,7 +74,7 @@ function VideoUpload() {
     <section className="video-upload">
       <h1 className="video-upload__title">Upload Video</h1>
 
-      <form className="video-upload__form" onSubmit={handlerSubmit}>
+      <form className="video-upload__form" onSubmit={submitHandler}>
         <div className="video-upload__form__body">
           <div className="video-upload__form__banner">
             <div className="video-upload__form__banner__title">
@@ -111,12 +127,11 @@ function VideoUpload() {
           <Button iconSrc={addCommentIcon} text="publish" />
         </div>
       </form>
-      {errors.length > 0 && (
-        <div className="video-upload__form__error">
-          <div className="video-upload__form__error-box">
-            <p> All fields are required!</p>
-          </div>
-        </div>
+      {errors.length > 0 && !errors.includes("API ERROR") && (
+        <FormError message="All fields are required!" />
+      )}
+      {errors.includes("API ERROR") && (
+        <FormError message="Something went wrong on the API server!" />
       )}
       {submitSuccess && <Success />}
     </section>

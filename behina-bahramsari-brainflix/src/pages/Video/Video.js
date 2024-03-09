@@ -15,6 +15,7 @@ function Video() {
   const activeVideoId = params.videoId;
   const [videoInfo, setVideoInfo] = useState({});
   const [hasError, setHasError] = useState(false);
+  const [triggerRefresh, setTriggerRefresh] = useState(false);
 
   const fetchVideo = async (videoId) => {
     try {
@@ -43,13 +44,17 @@ function Video() {
     } else {
       fetchDefaultVideo();
     }
-  }, [activeVideoId]);
+  }, [activeVideoId, triggerRefresh]);
+
+  const triggerMainVideo = () => {
+    setTriggerRefresh((prev) => !prev);
+  };
 
   return (
     <main className="video">
       <VideoPlayer videoSrc={videoInfo.video} image={videoInfo.image} />
       <div className="video__body">
-        <VideoDetails videoInfo={videoInfo} />
+        <VideoDetails videoInfo={videoInfo} triggerMainVideo={triggerMainVideo}/>
         <NextVideosList activeVideoId={videoInfo.id} />
       </div>
       {hasError && <Error/>}

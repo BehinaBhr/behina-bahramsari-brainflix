@@ -2,10 +2,10 @@ import "./CommentSection.scss";
 import CommentForm from "../CommentForm/CommentForm";
 import CommentItem from "../CommentItem/CommentItem";
 
-function CommentSection({ commentsList }) {
+function CommentSection({ commentsList, activeVideoId, triggerMainVideo }) {
   return (
     <section className="comment-section">
-      <CommentForm />
+      <CommentForm activeVideoId={activeVideoId} triggerMainVideo={triggerMainVideo}/>
       {commentsList != undefined &&
         commentsList.map((comment) => {
           return <CommentItem key={comment.id} comment={comment} />;

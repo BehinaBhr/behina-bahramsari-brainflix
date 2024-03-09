@@ -295,15 +295,53 @@
   },
   {
     "id": "13a4a861-0846-423d-994a-65a5fc867ddb",
-    "title": "new uploaded video",
-    "description": "it is a fun video, You will love it.",
-    "channel": "",
+    "title": "Manually Added Video",
+    "description": "It is a fun video, You will love it.",
+    "channel": "Anonymous",
     "views": 0,
     "likes": 0,
     "duration": "00:00",
     "image": "/images/Upload-video-preview.jpg",
     "video": "",
-    "comments": [],
+    "comments": [
+      {
+        "id": "04d2dcd8-9216-486d-8293-86f341f5a5f8",
+        "name": "Behina Bhr",
+        "comment": "I really enjoyed this video! Thanks for posting",
+        "timestamp": 1709962843215
+      },
+      {
+        "id": "fc6dcf59-1e9b-44f9-bb1e-ceea1831372a",
+        "name": " current user",
+        "comment": "the new comment for manually added video",
+        "timestamp": 1709974808814
+      }
+    ],
     "timestamp": 1709877260051
+  },
+  {
+    "id": "e525cf0c-7fb8-46ce-908f-66086c01b5b6",
+    "title": "New Upload Video",
+    "description": "This is a test for publishing a video from the upload page.",
+    "image": "images/Upload-video-preview.jpg",
+    "channel": "Anonymous",
+    "views": 0,
+    "likes": 0,
+    "duration": "00:00",
+    "video": "",
+    "comments": [
+      {
+        "id": "d3aba8f8-f8cc-422b-81c3-9b021795a20d",
+        "name": " current user",
+        "comment": "new comment by form",
+        "timestamp": 1709970100601
+      },
+      {
+        "id": "cdc4c5fc-64a5-4721-9a4c-8499723b52d1",
+        "name": " current user",
+        "comment": "the new comment for new upload video",
+        "timestamp": 1709974832203
+      }
+    ]
   }
 ]
