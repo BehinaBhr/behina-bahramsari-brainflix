@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { BASE_URL } from "../../api-base-url";
 import axios from "axios";
 
+// for displaying a list of next videos
 function NextVideosList({ activeVideoId }) {
   const [videos, setVideos] = useState([]);
   const [hasError, setHasError] = useState(false);

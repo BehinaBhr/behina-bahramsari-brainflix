@@ -4,6 +4,7 @@ import likeicone from "../../assets/icons/likes.svg";
 import CommentSection from "../CommentSection/CommentSection";
 import {timestampToDate} from '../../utils/utils';
 
+// for displaying detailed information about a video below the player
 function VideoDetails({ videoInfo, triggerMainVideo }) {
   const { title, channel, timestamp, views, likes, description, comments } = videoInfo;
 

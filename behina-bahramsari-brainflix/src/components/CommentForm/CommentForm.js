@@ -8,6 +8,7 @@ import axios from "axios";
 import { BASE_URL } from "../../api-base-url";
 import FormError from "../../components/FormError/FormError";
 
+// for handling and displaying video comment form 
 function CommentForm({ activeVideoId, triggerMainVideo }) {
   const [comment, setComment] = useState("");
   const [errors, setErrors] = useState([]);

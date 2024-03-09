@@ -2,6 +2,7 @@ import "./CommentSection.scss";
 import CommentForm from "../CommentForm/CommentForm";
 import CommentItem from "../CommentItem/CommentItem";
 
+// for displaying and managing video comments
 function CommentSection({ commentsList, activeVideoId, triggerMainVideo }) {
   return (
     <section className="comment-section">

@@ -2,7 +2,7 @@ import "./CommentItem.scss";
 import Avatar from "../Avatar/Avatar"
 import {timestampToDate} from '../../utils/utils';
 
-
+// for handling and displaying each video comment 
 function CommentItem({ comment }) {
     return (
         <article className="comment" id={"comment-" + comment.id}>

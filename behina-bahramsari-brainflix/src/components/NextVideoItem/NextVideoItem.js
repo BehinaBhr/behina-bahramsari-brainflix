@@ -2,6 +2,7 @@ import "./NextVideoItem.scss";
 import { Link } from "react-router-dom";
 import { BASE_URL } from "../../api-base-url";
 
+// for displaying a thumbnail, title, and channel of each video in the next video list
 function NextVideoItem({ video }) {
   return (
     <li className="next-video-item">
