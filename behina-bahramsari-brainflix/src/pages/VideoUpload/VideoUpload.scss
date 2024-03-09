@@ -2,7 +2,6 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/variables" as *;
 
 .video-upload {
   border-top: 1px solid $lightsilver;
@@ -123,7 +122,6 @@
 
       ::placeholder {
         color: $black;
-        font-family: "Roboto", sans-serif;
       }
     }
 
@@ -135,6 +133,7 @@
       border-radius: 4px;
       box-sizing: border-box;
       margin-bottom: 1rem;
+      font-family: "Roboto", sans-serif;
 
       @include tablet {
         padding: 1.5rem;

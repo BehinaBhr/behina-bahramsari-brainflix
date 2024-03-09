@@ -9,7 +9,7 @@ function CommentSection({ commentsList, activeVideoId, triggerMainVideo }) {
       <CommentForm activeVideoId={activeVideoId} triggerMainVideo={triggerMainVideo}/>
       {commentsList != undefined &&
         commentsList.map((comment) => {
-          return <CommentItem key={comment.id} comment={comment} />;
+          return <CommentItem key={comment.id} comment={comment} triggerMainVideo={triggerMainVideo} activeVideoId={activeVideoId} />;
         })}
     </section>
   );
